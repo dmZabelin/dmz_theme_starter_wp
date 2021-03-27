@@ -1,0 +1,25 @@
+@import 'reset';
+@import 'helpers';
+@import 'fonts';
+@import 'vars';
+@import 'mixins';
+@import 'functions';
+@import 'base';
+@import 'animation';
+
+@import 'header-styles';
+
+/*===================
+= = = HOME PAGE = = =
+=====================*/
+
+@import 'footer-styles';
+@import 'popup-styles';
+
+/* == PREFERRED STYLE == */
+@import 'preferred';
+
+/* == MEDIA QUERIES == */
+//@import 'responsive-large';
+@import 'responsive';
+@import 'libs';
