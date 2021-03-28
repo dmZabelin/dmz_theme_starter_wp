@@ -2,7 +2,7 @@
 
 /****************************************************************
  "dm_starter_theme" - functions and definitions
- * * DO NOT DELETE **
+ *! DO NOT DELETE 
  ****************************************************************/
 
 if ( get_stylesheet_directory() == get_template_directory() ) {
@@ -27,8 +27,7 @@ if ( get_stylesheet_directory() == get_template_directory() ) {
 
 /****************************************************************
 * You can add your functions here.
-*
-* BE CAREFULL! Functions will dissapear after update.
-* If you want to add custom functions you should do manual
-* updates only.
+* !BE CAREFULL
+* Functions will dissapear after update.
+* If you want to add custom functions you should do manual updates only.
 ****************************************************************/
