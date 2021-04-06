@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package dm_starter_theme
+ * @package dmz_theme
  */
 
    get_header();

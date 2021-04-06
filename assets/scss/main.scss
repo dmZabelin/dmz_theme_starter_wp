@@ -1,25 +1,24 @@
-@import 'reset';
-@import 'helpers';
-@import 'fonts';
-@import 'vars';
-@import 'mixins';
-@import 'functions';
-@import 'base';
-@import 'animation';
+@import "vars";
+@import "mixins";
+@import "reset";
+@import "libs";
+@import "fonts";
+@import "functions";
+@import "base";
+@import "animation";
 
-@import 'header-styles';
+@import "header-styles";
 
-/*===================
-= = = HOME PAGE = = =
-=====================*/
+/*===============
+= = = PAGES = = =
+=================*/
 
-@import 'footer-styles';
-@import 'popup-styles';
+@import "footer-styles";
+@import "popup-styles";
 
-/* == PREFERRED STYLE == */
-@import 'preferred';
+/* == PRIORITY STYLES == */
+@import "priority";
 
 /* == MEDIA QUERIES == */
 //@import 'responsive-large';
-@import 'responsive';
-@import 'libs';
+@import "responsive";

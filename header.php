@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package dm_starter_theme
+ * @package dmz_theme
  */
 ?>
 <!doctype html>

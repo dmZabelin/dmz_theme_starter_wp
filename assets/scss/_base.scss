@@ -3,33 +3,13 @@ html {
 	font-size: 62.5%;
 }
 body {
+	font: 400 1.6rem $m_font;
+	color: $m_color;
 }
 .container {
 	width: 100%;
-	max-width: 1170px;
+	max-width: 117rem;
 	margin: 0 auto;
-	position: relative;
-}
-a {
-	display: block;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1 !important;
-}
-h1 {
-}
-h2 {
-}
-h3 {
-}
-h4 {
-}
-h5 {
 }
 
 /* == COMMON STYLES == */

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dm_starter_theme
+ * @package dmz_theme
  */
 
    get_header();

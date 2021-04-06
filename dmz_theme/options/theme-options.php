@@ -7,7 +7,7 @@ if ( ! class_exists( 'Redux' ) ) {
 }
 
 // This is your option name where all the Redux data is stored.
-$opt_name = 'dm_theme';
+$opt_name = 'dmz_theme';
 $dir = dirname( __FILE__ ) . '/';
 
 // TYPICAL -> Change these values as you need/desire.
@@ -16,7 +16,7 @@ $args = array(
 	'opt_name'                  => $opt_name,
 
 	// Name that appears at the top of your panel.
-	'display_name'              => esc_html__( 'Theme Options', 'dmz_theme' ),
+	'display_name'              => esc_html__( 'Параметры темы', 'dmz_theme' ),
 
 	// Version that appears at the top of your panel.
 	'display_version'           => '',
@@ -28,10 +28,10 @@ $args = array(
 	'allow_sub_menu'            => true,
 
 	// The text to appear in the admin menu.
-	'menu_title'                => esc_html__( 'Theme Options', 'dmz_theme' ),
+	'menu_title'                => esc_html__( 'Параметры темы', 'dmz_theme' ),
 
 	// The text to appear on the page title.
-	'page_title'                => esc_html__( 'Theme Options', 'dmz_theme' ),
+	'page_title'                => esc_html__( 'Параметры темы', 'dmz_theme' ),
 
 	// Enabled the Webfonts typography module to use asynchronous fonts.
 	'async_typography'          => false,
@@ -128,22 +128,57 @@ Redux::set_args( $opt_name, $args );
 * *СОЗДАЕМ КАСТОМНЫЕ ПОЛЯ ДЛЯ ТЕМЫ
 ************************************/
 
-// -> START Basic Fields
-Redux::set_section(
-	$opt_name,
-	array(
-		'title'            => esc_html__( 'Text', 'dmz_theme' ),
-		'desc'             => '',
-		'id'               => 'basic-text',
-		'fields'           => array(
-			array(
-				'id'       => 'text-example',
-				'type'     => 'text',
-				'title'    => esc_html__( 'Text Field', 'dmz_theme' ),
-				'subtitle' => esc_html__( 'Subtitle', 'dmz_theme' ),
-				'desc'     => esc_html__( 'Field Description', 'dmz_theme' ),
-				'default'  => 'Default Text',
-			),
-		),
-	),
-);
+// *Пример --> START Basic Fields
+Redux::set_section( $opt_name, [
+	'title'            => esc_html__( 'Контактная информация', 'dmz_theme' ),
+	'desc'             => '',
+	'id'               => 'dmz-contacts',
+	'icon'             => 'el el-address-book',
+]);
+	Redux::set_section( $opt_name, [
+			'title'            => esc_html__( 'Номера телефонов храма', 'dmz_theme' ),
+			'desc'             => '',
+			'id'               => 'dmz-phones',
+			'icon'             => 'el el-phone',
+			'subsection'       => true,
+			'fields'           => [
+				[
+					'id'       => 'dmz-contacts-phone-one',
+					'type'     => 'text',
+					'title'    => esc_html__( 'Номер телефонa храма (мобильный)', 'dmz_theme' ),
+					'placeholder' => '(067) 123 45 67'
+				], [
+					'id'       => 'dmz-contacts-phone-two',
+					'type'     => 'text',
+					'title'    => esc_html__( 'Номер телефонa храма (городской)', 'dmz_theme' ),
+					'placeholder' => '(048) 123 45 67'
+				]
+			],
+		]
+	);
+	Redux::set_section( $opt_name, [
+			'title'            => esc_html__( 'Месторасположение храма', 'dmz_theme' ),
+			'desc'             => '',
+			'id'               => 'dmz-geo',
+			'icon'             => 'el el-map-marker',
+			'subsection'       => true,
+			'fields'           => [
+				[
+					'id'       => 'dmz-geo-address',
+					'type'     => 'text',
+					'title'    => esc_html__( 'Адрес храма', 'dmz_theme' ),
+					'default' => '65020, Украина, Одесская область, <strong>Одесса, ул.Мечникова, 74</strong>',
+				],	[
+					'id'       => 'dmz-geo-link-google-map',
+					'type'     => 'text',
+					'title'    => esc_html__( 'Ссылка на карту Google', 'dmz_theme' ),
+					'default'  => 'https://goo.gl/maps/6rDYGpnipAEgoVyr8',
+				],	[
+					'id'       => 'dmz-geo-link-2gis-map',
+					'type'     => 'text',
+					'title'    => esc_html__( 'Ссылка на карту 2gis', 'dmz_theme' ),
+					'default'  => 'https://go.2gis.com/177yg',
+				]
+			],
+		]
+	);

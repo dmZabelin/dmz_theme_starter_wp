@@ -1,29 +1,29 @@
 <?php
 
 /****************************************************************
- "dm_starter_theme" - functions and definitions
+ "dmz_theme" - functions and definitions
  *! DO NOT DELETE 
  ****************************************************************/
 
 if ( get_stylesheet_directory() == get_template_directory() ) {
 
-   define('DM_PATH_INC', get_template_directory() . '/inc');
-	define('DM_URL_INC', get_template_directory_uri() . '/inc');
+	define('DMZ_THEME_DIR', get_template_directory() . '/dmz_theme');
+	define('DMZ_THEME_URL', get_template_directory_uri() . '/dmz_theme');
 
-   define('DM_PATH_ASSETS', get_template_directory() . '/assets');	
-	define('DM_URL_ASSETS', get_template_directory_uri() . '/assets');
+	define('DMZ_PATH_ASSETS', get_template_directory() . '/assets');	
+	define('DMZ_URL_ASSETS', get_template_directory_uri() . '/assets');
 
 }  else {
 
-   define('DM_PATH_INC', get_theme_root() . '/dm_starter_theme/inc');
-	define('DM_URL_INC', get_theme_root_uri() . '/dm_starter_theme/inc');
+	define('DMZ_THEME_DIR', get_theme_root() . '/hram-kirilla-mefodiya.od.ua/dmz_theme');
+	define('DMZ_THEME_URL', get_theme_root_uri() . '/hram-kirilla-mefodiya.od.ua/dmz_theme');
 	
-   define('DM_PATH_ASSETS', get_theme_root() . '/dm_starter_theme/assets');
-	define('DM_URL_ASSETS', get_theme_root_uri() . '/dm_starter_theme/assets');
+	define('DMZ_PATH_ASSETS', get_theme_root() . '/hram-kirilla-mefodiya.od.ua/assets');
+	define('DMZ_URL_ASSETS', get_theme_root_uri() . '/hram-kirilla-mefodiya.od.ua/assets');
 }
 
 // include system functions
-   require_once (DM_PATH_INC . '/constants.php');	
+	require_once (DMZ_THEME_DIR . '/constants.php');	
 
 /****************************************************************
 * You can add your functions here.

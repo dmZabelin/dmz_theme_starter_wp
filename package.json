@@ -1,22 +1,22 @@
 {
-  "name": "dm_starter_theme",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-clean-css": "latest",
-    "gulp-rename": "^2.0.0",
-    "gulp-update": "0.0.2",
-    "gulp-watch": "^5.0.1",
-    "gulp-sass": "latest",
-    "gulp-uglify": "^3.0.2",
-    "gulp-sourcemaps": "^3.0.0"
-  },
-  "browserslist": [
-    "last 2 versions"
-  ],
-  "author": "Dm-Zabelin",
-  "license": "ISC"
+	"name": "dmz_theme",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"dependencies": {
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^7.0.1",
+		"gulp-clean-css": "latest",
+		"gulp-rename": "^2.0.0",
+		"gulp-update": "0.0.2",
+		"gulp-watch": "^5.0.1",
+		"gulp-sass": "latest",
+		"gulp-uglify": "^3.0.2",
+		"gulp-sourcemaps": "^3.0.0"
+	},
+	"browserslist": [
+		"last 2 versions"
+	],
+	"author": "Dm-Zabelin",
+	"license": "ISC"
 }

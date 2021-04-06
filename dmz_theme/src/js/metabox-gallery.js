@@ -24,7 +24,7 @@ jQuery(function ($) {
 				attachment = attachment.toJSON(),
 					index = listIndex + (i + 1);
 
-				$('#gallery-metabox-list').append('<li class="image_holder"><input type="hidden" name="dm_gallery_id[' + index + ']" value="' + attachment.id + '"><img class="image-preview" src="' + attachment.sizes.thumbnail.url + '"><div class="buttons_manage"><a class="change-image button button-primary button-medium" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image"><i class="fa fa-cog" aria-hidden="true"></i></a> <a class="remove-image button button-primary button-medium" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></div></li>');
+				$('#gallery-metabox-list').append('<li class="image_holder"><input type="hidden" name="dmz_gallery_id[' + index + ']" value="' + attachment.id + '"><img class="image-preview" src="' + attachment.sizes.thumbnail.url + '"><div class="buttons_manage"><a class="change-image button button-primary button-medium" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image"><i class="fa fa-cog" aria-hidden="true"></i></a> <a class="remove-image button button-primary button-medium" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></div></li>');
 			});
 		});
 
@@ -63,7 +63,7 @@ jQuery(function ($) {
 
 	function resetIndex() {
 		$('#gallery-metabox-list li').each(function (i) {
-			$(this).find('input:hidden').attr('name', 'dm_gallery_id[' + i + ']');
+			$(this).find('input:hidden').attr('name', 'dmz_gallery_id[' + i + ']');
 		});
 	}
 
