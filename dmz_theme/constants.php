@@ -16,6 +16,7 @@ require_once (DMZ_THEME_DIR . '/etc/admin.php');
 require_once (DMZ_THEME_DIR . '/etc/default.php');
 require_once (DMZ_THEME_DIR . '/etc/front.php');
 require_once (DMZ_THEME_DIR . '/functions/tgm.php');
-require_once (DMZ_THEME_DIR . '/meta/gallery-meta.php');
+require_once (DMZ_THEME_DIR . '/functions/general.php');
 require_once (DMZ_THEME_DIR . '/options/theme-options.php');
+require_once (DMZ_THEME_DIR . '/meta/gallery-meta.php');
 require_once (DMZ_THEME_DIR . '/config.php');

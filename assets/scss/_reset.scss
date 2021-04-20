@@ -87,6 +87,7 @@ video {
 	padding: 0;
 	border: 0;
 	vertical-align: baseline;
+	font-style: normal;
 }
 
 :focus {
@@ -427,4 +428,71 @@ div,
 p,
 figcaption {
 	box-sizing: border-box;
+}
+
+/*==========================
+ * * * WORDPRESS CORE * * *
+===========================*/
+.alignnone {
+	margin: 0.5rem 2rem 2rem 0;
+}
+
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin: 0.5rem auto 0.5rem auto;
+}
+.alignright {
+	float: right;
+	margin: 0.5rem 0 2rem 2rem;
+}
+.alignleft {
+	float: left;
+	margin: 0.5rem 2rem 2rem 0;
+}
+a img.alignright {
+	float: right;
+	margin: 0.5rem 0 2rem 2rem;
+}
+a img.alignnone {
+	margin: 0.5rem 2rem 2rem 0;
+}
+a img.alignleft {
+	float: left;
+	margin: 0.5rem 2rem 2rem 0;
+}
+a img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-caption {
+	background: #fff;
+	border: 1px solid #f0f0f0;
+	max-width: 99%;
+	padding: 0.5rem 0.3rem 1rem;
+	text-align: center;
+}
+.wp-caption.alignnone {
+	margin: 0.5rem 0 2rem 0;
+}
+.wp-caption.alignleft {
+	margin: 0.5rem 2rem 2rem 0;
+}
+.wp-caption.alignright {
+	margin: 0.5rem 0 2rem 2rem;
+}
+.wp-caption img {
+	border: 0 none;
+	height: auto;
+	margin: 0;
+	max-width: 98.5%;
+	padding: 0;
+	width: auto;
+}
+.wp-caption p.wp-caption-text {
+	font-size: 1.1rem;
+	line-height: 1.7rem;
+	margin: 0;
+	padding: 0 0.4rem 0.5rem;
 }
