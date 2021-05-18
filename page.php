@@ -1,13 +1,11 @@
 <?php
 /**
- * The template for displaying all pages
+ * Шаблон для отображения всех страниц
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * Это шаблон, который по умолчанию отображает все страницы.
+ * Обратите внимание, что это конструкция страниц WordPress.
+ * и что другие «страницы» на вашем сайте WordPress могут использовать
+ * другой шаблон.
  *
  * @package dmz_theme
  */

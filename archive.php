@@ -1,8 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * Шаблон для отображения страниц архива
  *
  * @package dmz_theme
  */

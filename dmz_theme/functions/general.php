@@ -1,7 +1,8 @@
 <?php
 
 // *Инициализация TGM плагина
-	function dmz_register_required_plugins() {
+	function dmz_register_required_plugins( ) 
+	{
 
 		$plugins = [
 			[
@@ -9,12 +10,12 @@
 				'slug'      => 'svg-support',
 				'required'  => false,
 			],[
-				'name'      => 'Advanced Custom Fields',
-				'slug'      => 'advanced-custom-fields',
-				'required'  => true,
-			],	[
 				'name'      => 'Advanced Editor Tools (ранее TinyMCE Advanced)',
 				'slug'      => 'tinymce-advanced',
+				'required'  => true,
+			],[
+				'name'      => 'Cyrlitera – transliteration of links and file names',
+				'slug'      => 'cyrlitera',
 				'required'  => true,
 			],	[
 				'name'      => 'Regenerate Thumbnails',
@@ -29,10 +30,19 @@
 					'force_activation'      => false,
 					'force_deactivation'    => false,
 					'external_url'          => '',
+			],	[
+					'name'                  => 'Metaboxes dmzTheme',
+					'slug'                  => 'dmz_theme_metaboxes',
+					'source'                => get_template_directory() . '/plugins/dmz_theme_metaboxes.zip',
+					'required'              => true,
+					'version'               => '',
+					'force_activation'      => false,
+					'force_deactivation'    => false,
+					'external_url'          => '',
 			],
 		];
 
-		$theme_text_domain = 'dmz_theme';
+		$theme_text_domain = 'dmz_hram_site';
 
 		$config = [
 			'id'           => 'tgmpa',                 // Unique ID for hashing notices for multiple instances of TGMPA.
@@ -52,138 +62,136 @@
 	add_action( 'tgmpa_register', 'dmz_register_required_plugins' );
 
 // *Функция ограничения вывода текста в карточке поста
-	function dmz_limit_excerpt($limit) {
-		$excerpt = explode(' ', get_the_excerpt(), $limit);
-		if (count($excerpt)>=$limit) {
-			array_pop($excerpt);
-			$excerpt = implode(" ", $excerpt).'... ';
-		} else {
-			$excerpt = implode(" ", $excerpt).' ';
-		}
-		$excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+	function dmz_limit_excerpt( $limit ) 
+	{
+		$excerpt = explode( ' ', get_the_excerpt(), $limit );
+		if ( count( $excerpt ) >= $limit ):
+			array_pop( $excerpt );
+			$excerpt = implode( " ", $excerpt ).'... ';
+		else:
+			$excerpt = implode( " ", $excerpt ).' ';
+		endif;
+		$excerpt = preg_replace( '`\[[^\]]*\]`', '', $excerpt );
+
 		return $excerpt;
 	}
 
 // *Функция регистрации кастомных размеров картинок
-	function dmz_init_theme_support() {
-		if (function_exists('dmz_get_images_sizes')) {
-			foreach (dmz_get_images_sizes() as $post_type => $sizes) {
-				foreach ($sizes as $config) {
-						dmz_add_image_size($post_type, $config);
+	function dmz_init_theme_support() 
+	{
+		if ( function_exists( 'dmz_get_images_sizes' ) ):
+			foreach ( dmz_get_images_sizes() as $post_type => $sizes ) 
+			{
+				foreach ( $sizes as $config ) 
+				{
+					dmz_add_image_size( $post_type, $config );
 				}
 			}
-		}
+		endif;
 	}
-	add_action('init', 'dmz_init_theme_support');
+	add_action( 'init', 'dmz_init_theme_support' );
 
 // *Обертка для создания кастомных размеров картинок
-	function dmz_add_image_size($post_type, $config) {
-	add_image_size($config['name'], $config['width'], $config['height'], $config['crop']);  
+	function dmz_add_image_size( $post_type, $config ) 
+	{
+		add_image_size( $config['name'], $config['width'], $config['height'], $config['crop'] );  
 	}
 
+// *Чистит строку, оставляя в ней только указанные HTML теги, их атрибуты и значения атрибутов.
+	function dmz_wp_kses( $dmz_string )
+	{
+		$allowed_tags = [
+			'img' => [
+				'src'		=>	[],
+				'alt'		=>	[],
+				'width'	=>	[],
+				'height'	=>	[],
+				'class'	=>	[],
+			],
+			'a' => [
+				'href'	=>	[],
+				'title'	=>	[],
+				'class'	=>	[],
+			],
+			'b' => [
+				'href'	=>	[],
+				'title'	=> [],
+				'class'	=>	[],
+			],
+			'span' => [
+				'class'	=>	[],
+			],
+			'div' => [
+				'class'	=>	[],
+				'id'		=>	[],
+			],
+			'h1' => [
+				'class'	=>	[],
+				'id'		=>	[],
+			],
+			'h2' => [
+				'class'	=> [],
+				'id'		=> [],
+			],
+			'h3' => [
+				'class'	=> [],
+				'id'		=> [],
+			],
+			'h4' => [
+				'class'	=> [],
+				'id'		=> [],
+			],
+			'h5' => [
+				'class'	=> [],
+				'id'		=> [],
+			],
+			'h6' => [
+				'class'	=> [],
+				'id'		=> [],
+			],
+			'p' => [
+				'class'	=> [],
+				'id'		=> [],
+			],
+			'strong' => [
+				'class'	=> [],
+				'id'		=> [],
+			],
+			'br' => [
+				'class'	=> [],
+				'id'		=> [],
+			],
+			'i' => [
+				'class'	=> [],
+				'id'		=> [],
+			],
+			'del' => [
+				'class'	=> [],
+				'id'		=> [],
+			],	
+			'ul' => [
+				'class'	=> [],
+				'id'		=> [],
+			],	
+			'li' => [
+				'class'	=> [],
+				'id'		=> [],
+			],
+			'ol' => [
+				'class'	=> [],
+				'id'		=> [],
+			],
+			'input' => [
+				'class'	=> [],
+				'id'		=> [],
+				'type'	=> [],
+				'style'	=> [],
+				'name'	=> [],
+				'value'	=> [],
+			],
+		];
 
-// *Функция вывода метаданных
-	function dmz_get_meta($key, $single = true, $post_id = null) {
-		if (null === $post_id) {
-			$post_id = get_the_ID();
-		}
-		$key = 'dmz_' . $key;
-		return get_post_meta($post_id, $key, $single);
-	}
-
-	// *Чистит строку, оставляя в ней только указанные HTML теги, их атрибуты и значения атрибутов.
-	function dmz_wp_kses($dmz_string){
-		$allowed_tags = array(
-			 'img' => array(
-				  'src' => array(),
-				  'alt' => array(),
-				  'width' => array(),
-				  'height' => array(),
-				  'class' => array(),
-			 ),
-			 'a' => array(
-				  'href' => array(),
-				  'title' => array(),
-				  'class' => array(),
-			 ),
-			 'b' => array(
-				  'href' => array(),
-				  'title' => array(),
-				  'class' => array(),
-			 ),
-			 'span' => array(
-				  'class' => array(),
-			 ),
-			 'div' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'h1' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'h2' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'h3' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'h4' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'h5' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'h6' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'p' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'strong' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'br' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'i' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'del' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'ul' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'li' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'ol' => array(
-				  'class' => array(),
-				  'id' => array(),
-			 ),
-			 'input' => array(
-				  'class' => array(),
-				  'id' => array(),
-				  'type' => array(),
-				  'style' => array(),
-				  'name' => array(),
-				  'value' => array(),
-			 ),
-		);
-		if (function_exists('wp_kses')) {
-			 return wp_kses($dmz_string,$allowed_tags);
-		}
+		if ( function_exists( 'wp_kses' ) ):
+			 return wp_kses( $dmz_string, $allowed_tags );
+		endif;
   }

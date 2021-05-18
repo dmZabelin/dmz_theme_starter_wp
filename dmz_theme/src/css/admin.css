@@ -1,0 +1,42 @@
+/*=======================================
+* * * КАСТОМНЫЕ СТИЛИ ДЛЯ МЕТАБОКСОВ* * *
+========================================*/
+
+#enabled_desabled_blocks_home .dmz_do_meta_boxes {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+#enabled_desabled_blocks_home .dmz_do_meta_boxes li {
+	text-align: center;
+	max-width: 250px;
+}
+#enabled_desabled_blocks_home .dmz_do_meta_boxes .dmz_meta_label {
+	font-size: 14px;
+}
+
+.file-item {
+	display: flex;
+	align-items: flex-start;
+}
+.file-image-preview {
+	margin-right: 10px;
+}
+.file-info h4,
+.file-size {
+	margin: 0;
+}
+.file-info {
+	padding-top: 3px;
+}
+.file-holder {
+	width: 100%;
+	max-width: 350px;
+}
+.btn-wrap {
+	display: flex;
+	align-items: center;
+}
+.btn-wrap .file-add {
+	margin-right: 10px;
+}

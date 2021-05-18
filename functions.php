@@ -15,11 +15,11 @@ if ( get_stylesheet_directory() == get_template_directory() ) {
 
 }  else {
 
-	define('DMZ_THEME_DIR', get_theme_root() . '/hram-kirilla-mefodiya.od.ua/dmz_theme');
-	define('DMZ_THEME_URL', get_theme_root_uri() . '/hram-kirilla-mefodiya.od.ua/dmz_theme');
+	define('DMZ_THEME_DIR', get_theme_root() . '/theme_path/dmz_theme');
+	define('DMZ_THEME_URL', get_theme_root_uri() . '/theme_path/dmz_theme');
 	
-	define('DMZ_PATH_ASSETS', get_theme_root() . '/hram-kirilla-mefodiya.od.ua/assets');
-	define('DMZ_URL_ASSETS', get_theme_root_uri() . '/hram-kirilla-mefodiya.od.ua/assets');
+	define('DMZ_PATH_ASSETS', get_theme_root() . '/theme_path/assets');
+	define('DMZ_URL_ASSETS', get_theme_root_uri() . '/theme_path/assets');
 }
 
 // include system functions

@@ -1,14 +1,13 @@
 <?php
 /**
- * The template for displaying the footer
+ * Шаблон для отображения футера
  *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * Содержит закрывающие теги  div.wrapper, body, html
  *
  * @package dmz_theme
  */
 ?>
+
 
 
 
